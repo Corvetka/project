@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="ru" data-palette="porto" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Проектирование систем умного дома для частных домов: освещение, климат, отопление, шторы и безопасность в согласовании с архитектурой и инженерными системами.">
+<meta name="theme-color" content="#0B1D22">
+<title>Системы умного дома — Проект-Комплект</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header class="topbar" id="topbar">
+  <a class="brand" href="index.html" aria-label="Проект-Комплект — на главную"><img src="assets/img/logo-light.png" alt="Проект-Комплект" class="logo--light"><img class="logo--dark" src="assets/img/logo-dark.png" alt="" aria-hidden="true"></a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+</header>
+
+<nav class="menu" id="menu" aria-hidden="true">
+  <div class="menu__grid">
+    <div class="menu__nav">
+      <a class="mlink" href="index.html"><span class="mlink__inner"><span class="mlink__num">00</span><span>Главная</span></span></a>
+      <a class="mlink" href="architecture.html"><span class="mlink__inner"><span class="mlink__num">01</span><span>Архитектурное проектирование</span></span></a>
+      <a class="mlink" href="architecture.html"><span class="mlink__inner"><span class="mlink__num">02</span><span>Архитектура</span></span></a>
+      <a class="mlink" href="structures.html"><span class="mlink__inner"><span class="mlink__num">03</span><span>Конструктив</span></span></a>
+      <a class="mlink" href="engineering.html"><span class="mlink__inner"><span class="mlink__num">04</span><span>Инженерные системы</span></span></a>
+      <a class="mlink" href="smart-home.html"><span class="mlink__inner"><span class="mlink__num">05</span><span>Умный дом</span></span></a>
+      <a class="mlink" href="pools-spa.html"><span class="mlink__inner"><span class="mlink__num">06</span><span>Бассейны и SPA</span></span></a>
+      <a class="mlink" href="landscape.html"><span class="mlink__inner"><span class="mlink__num">07</span><span>Ландшафт</span></span></a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<section class="hero">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="hero__inner">
+    <h1 class="hero__title">
+      <span class="mask is-in pt-1"><span>Системы умного дома</span></span>
+    </h1>
+    <p class="strongline" data-reveal>Умный дом начинается с продуманного проекта</p>
+    <p class="hero__lead">Проектируем системы автоматизации для частных домов: объединяем освещение, климат, отопление, управление шторами и другие функции в понятную систему. Продумываем логику работы заранее, согласуем решения с инженерными системами и сопровождаем настройку — вплоть до управления работами на объекте и, при необходимости, настройки нашими силами.</p>
+    <div class="hero__actions">
+      <a class="btn" href="contacts.html">Обсудить проект умного дома</a>
+      <a class="btn btn--ghost" href="#functions">Посмотреть, что можно автоматизировать</a>
+    </div>
+  </div>
+</section>
+
+<div class="decor decor--1" aria-hidden="false" aria-label="Декоративные изображения — можно перетаскивать">
+    <div class="decor__inner">
+      <figure class="decor__item" tabindex="0" style="--x:38;--y:50;--w:254px;--rot:-9.5deg;--z:5;--d:0ms;--spill:10px">
+        <img src="assets/img/decor/pat-diagonal.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:62;--y:38;--w:161px;--rot:7.0deg;--z:3;--d:90ms;--spill:0px">
+        <img src="assets/img/decor/cut-branch.png" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:24;--y:62;--w:238px;--rot:-4.0deg;--z:4;--d:180ms;--spill:6px">
+        <img src="assets/img/decor/cut-pillow.png" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:76;--y:36;--w:267px;--rot:11.5deg;--z:5;--d:270ms;--spill:10px">
+        <img src="assets/img/decor/pat-stripes.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:50;--y:75;--w:157px;--rot:-3.0deg;--z:3;--d:360ms;--spill:0px">
+        <img src="assets/img/decor/pat-dots.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:12;--y:30;--w:238px;--rot:8.5deg;--z:4;--d:450ms;--spill:6px">
+        <img src="assets/img/decor/pat-weave.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:88;--y:70;--w:363px;--rot:-7.5deg;--z:5;--d:540ms;--spill:10px">
+        <img src="assets/img/decor/tex-paint.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+    </div>
+  </div>
+
+<section class="sect" id="idea">
+  <div class="wrap">
+    <div class="sect__head head--split" data-reveal>
+      <div><h2><span class="mask"><span>Автоматизация, которая подходит вашему образу жизни</span></span></h2></div>
+      <div class="sect__lead"><p>Начинаем с задач и предпочтений, а затем определяем, какие функции действительно стоит автоматизировать, как они будут взаимодействовать и каким способом ими будет удобно управлять. При этом учитываем архитектуру, инженерные сети, оборудование и возможности дальнейшего обслуживания.</p><p>Умный дом — не набор устройств ради самих устройств. Это согласованная система, которая помогает управлять домом удобнее: объединяет отдельные функции, учитывает привычки жильцов и позволяет задавать сценарии для разных ситуаций.</p></div>
+    </div>
+    <div class="flow" data-reveal style="--i:2">
+      <article class="flow__item"><h3><span class="mark">Сначала логика — потом оборудование.</span></h3><p>Определяем сценарии и требования до выбора конкретных устройств и схем управления.</p></article>
+      <article class="flow__item"><h3><span class="mark">Единая система.</span></h3><p>Согласуем автоматизацию с освещением, отоплением, вентиляцией, электроснабжением и другими предусмотренными проектом системами.</p></article>
+      <article class="flow__item"><h3><span class="mark">Понятное управление.</span></h3><p>Продумываем повседневные команды, автоматические сценарии и ручное управление, чтобы системой было удобно пользоваться.</p></article>
+    </div>
+  </div>
+</section>
+
+<div class="decor decor--2" aria-hidden="false" aria-label="Декоративные изображения — можно перетаскивать">
+    <div class="decor__inner">
+      <figure class="decor__item" tabindex="0" style="--x:62;--y:38;--w:224px;--rot:6.5deg;--z:3;--d:0ms;--spill:0px">
+        <img src="assets/img/decor/tex-velvet.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:24;--y:62;--w:363px;--rot:-11.0deg;--z:5;--d:90ms;--spill:10px">
+        <img src="assets/img/decor/tex-glass.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:76;--y:24;--w:285px;--rot:4.0deg;--z:4;--d:180ms;--spill:6px">
+        <img src="assets/img/decor/tex-wood.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:50;--y:75;--w:157px;--rot:-6.5deg;--z:3;--d:270ms;--spill:0px">
+        <img src="assets/img/decor/pat-diagonal.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:12;--y:37;--w:261px;--rot:9.0deg;--z:5;--d:360ms;--spill:10px">
+        <img src="assets/img/decor/cut-branch.png" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:88;--y:70;--w:238px;--rot:-4.5deg;--z:4;--d:450ms;--spill:6px">
+        <img src="assets/img/decor/cut-pillow.png" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:38;--y:50;--w:165px;--rot:12.0deg;--z:3;--d:540ms;--spill:0px">
+        <img src="assets/img/decor/pat-stripes.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+    </div>
+  </div>
+
+<section class="sect" id="functions">
+  <div class="wrap">
+    <div class="sect__head head--split" data-reveal>
+      <div><h2><span class="mask"><span>Функции, которые работают вместе</span></span></h2></div>
+      <div class="sect__lead"><p>Конкретный перечень функций и оборудования формируется после обсуждения задач и выбора технической платформы. Возможности интеграции зависят от совместимости устройств и требований производителей.</p><p>Набор функций зависит от задач дома, выбранного оборудования и бюджета.</p><p>В проект могут входить:</p></div>
+    </div>
+    <div class="grid grid--2" data-reveal style="--i:1">
+      <article class="card"><h3>Освещение.</h3><p>Сценарии освещения для разных помещений и ситуаций, управление группами света и диммированием при поддержке оборудования.</p></article>
+      <article class="card"><h3>Климат и отопление.</h3><p>Управление температурой, зонами отопления и совместимой климатической техникой.</p></article>
+      <article class="card"><h3>Шторы и солнцезащита.</h3><p>Автоматизация приводов штор, жалюзи и других совместимых устройств.</p></article>
+      <article class="card"><h3>Безопасность и контроль.</h3><p>Интеграция предусмотренных проектом датчиков протечки, дыма, открытия, движения и других устройств.</p></article>
+      <article class="card"><h3>Управление инженерными системами.</h3><p>Связь с совместимыми системами вентиляции, водоснабжения и электроснабжения в пределах выбранной конфигурации.</p></article>
+      <article class="card"><h3>Сценарии присутствия и удалённое управление.</h3><p>Режимы «Ушли», «Дома», «Ночь» или другие сценарии, а также управление через приложение — если это поддерживается выбранной системой.</p></article>
+    </div>
+  </div>
+</section>
+
+<div class="decor decor--3" aria-hidden="false" aria-label="Декоративные изображения — можно перетаскивать">
+    <div class="decor__inner">
+      <figure class="decor__item" tabindex="0" style="--x:24;--y:62;--w:254px;--rot:-9.5deg;--z:5;--d:0ms;--spill:10px">
+        <img src="assets/img/decor/pat-dots.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:76;--y:24;--w:187px;--rot:7.0deg;--z:3;--d:90ms;--spill:0px">
+        <img src="assets/img/decor/pat-weave.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:50;--y:76;--w:285px;--rot:-4.0deg;--z:4;--d:180ms;--spill:6px">
+        <img src="assets/img/decor/tex-paint.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:12;--y:30;--w:363px;--rot:11.5deg;--z:5;--d:270ms;--spill:10px">
+        <img src="assets/img/decor/tex-velvet.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:88;--y:70;--w:224px;--rot:-3.0deg;--z:3;--d:360ms;--spill:0px">
+        <img src="assets/img/decor/tex-glass.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:38;--y:50;--w:285px;--rot:8.5deg;--z:4;--d:450ms;--spill:6px">
+        <img src="assets/img/decor/tex-wood.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:62;--y:38;--w:254px;--rot:-7.5deg;--z:5;--d:540ms;--spill:10px">
+        <img src="assets/img/decor/pat-diagonal.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+    </div>
+  </div>
+
+<section class="sect sect--deck" id="process">
+  <div class="wrap">
+    <div class="sect__head" data-reveal><h2><span class="mask"><span>От сценариев к настройке на объекте</span></span></h2></div>
+  </div>
+
+  <div class="deck" id="deck" data-reveal>
+    <div class="wrap deck__stage">
+
+      <button class="deck__arrow deck__arrow--prev" type="button" id="deckPrev" aria-label="Предыдущий шаг"></button>
+      <button class="deck__arrow deck__arrow--next" type="button" id="deckNext" aria-label="Следующий шаг"></button>
+
+      <div class="deck__viewport" id="deckViewport">
+      <ul class="deck__track" id="deckTrack" tabindex="0">
+        <li class="deck__slide" aria-roledescription="слайд" aria-label="1 из 5">
+  <h3><span class="step">01.</span><span>Обсуждаем задачи.</span></h3>
+  <p>Разбираемся, что важно автоматизировать, как вы пользуетесь домом и какие функции нужны на старте.</p>
+</li>
+        <li class="deck__slide" aria-roledescription="слайд" aria-label="2 из 5">
+  <h3><span class="step">02.</span><span>Разрабатываем проект.</span></h3>
+  <p>Формируем логику сценариев, определяем состав системы, требования к оборудованию, подключению и взаимодействию с инженерными сетями.</p>
+</li>
+        <li class="deck__slide" aria-roledescription="слайд" aria-label="3 из 5">
+  <h3><span class="step">03.</span><span>Согласуем решения с другими разделами.</span></h3>
+  <p>Учитываем расположение выключателей, датчиков, приводов, оборудования и необходимых кабельных линий.</p>
+</li>
+        <li class="deck__slide" aria-roledescription="слайд" aria-label="4 из 5">
+  <h3><span class="step">04.</span><span>Сопровождаем реализацию и настройку.</span></h3>
+  <p>Координируем настройку системы на объекте, проверяем соответствие согласованной логике и помогаем организовать взаимодействие участников работ.</p>
+</li>
+        <li class="deck__slide" aria-roledescription="слайд" aria-label="5 из 5">
+  <h3><span class="step">05.</span><span>При необходимости настраиваем сами.</span></h3>
+  <p>В зависимости от проекта и договорённостей можем выполнить настройку оборудования собственными силами.</p>
+</li>
+      </ul>
+      </div>
+
+      <div class="deck__foot">
+        <div class="deck__dots" id="deckDots">
+        <button class="deck__dot is-active" type="button" data-go="0" aria-label="Шаг 1"></button>
+        <button class="deck__dot" type="button" data-go="1" aria-label="Шаг 2"></button>
+        <button class="deck__dot" type="button" data-go="2" aria-label="Шаг 3"></button>
+        <button class="deck__dot" type="button" data-go="3" aria-label="Шаг 4"></button>
+        <button class="deck__dot" type="button" data-go="4" aria-label="Шаг 5"></button>
+      </div>
+        <div class="deck__hint"><span class="deck__count" id="deckCount">01 / 05</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap"><div class="sect__cta" data-reveal><a class="btn" href="contacts.html">Обсудить задачу</a></div></div>
+</section>
+
+<div class="decor decor--4" aria-hidden="false" aria-label="Декоративные изображения — можно перетаскивать">
+    <div class="decor__inner">
+      <figure class="decor__item" tabindex="0" style="--x:76;--y:25;--w:161px;--rot:6.5deg;--z:3;--d:0ms;--spill:0px">
+        <img src="assets/img/decor/cut-branch.png" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:50;--y:68;--w:303px;--rot:-11.0deg;--z:5;--d:90ms;--spill:10px">
+        <img src="assets/img/decor/cut-pillow.png" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:12;--y:30;--w:210px;--rot:4.0deg;--z:4;--d:180ms;--spill:6px">
+        <img src="assets/img/decor/pat-stripes.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:88;--y:70;--w:157px;--rot:-6.5deg;--z:3;--d:270ms;--spill:0px">
+        <img src="assets/img/decor/pat-dots.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:38;--y:50;--w:303px;--rot:9.0deg;--z:5;--d:360ms;--spill:10px">
+        <img src="assets/img/decor/pat-weave.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:62;--y:38;--w:285px;--rot:-4.5deg;--z:4;--d:450ms;--spill:6px">
+        <img src="assets/img/decor/tex-paint.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:24;--y:62;--w:224px;--rot:12.0deg;--z:3;--d:540ms;--spill:0px">
+        <img src="assets/img/decor/tex-velvet.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+    </div>
+  </div>
+
+<section class="sect" id="coherence">
+  <div class="wrap">
+    <div class="sect__head head--split" data-reveal>
+      <div><h2><span class="mask"><span>Умный дом — часть единого проекта</span></span></h2></div>
+      <div class="sect__lead"><p>Чтобы автоматизация работала предсказуемо, её важно предусмотреть до завершения проектирования и монтажа. Расположение оборудования, питание, кабельные линии, исполнительные устройства и логика управления должны быть согласованы с архитектурой и инженерными системами. Это помогает заранее определить состав работ и избежать решений, которые сложно реализовать после отделки.</p><p>Мы можем подключиться на этапе проектирования, сопровождать реализацию и управление настройкой, а при согласовании состава работ — выполнить настройку своими силами. Формат участия определяем исходя из задач объекта и выбранного оборудования.</p></div>
+    </div>
+    <p class="sect__note" data-reveal>Смежные направления:</p>
+    <div class="card__links" data-reveal>
+      <a class="tlink" href="architecture.html">Архитектура</a><a class="tlink" href="structures.html">Конструктив</a><a class="tlink" href="engineering.html">Инженерные системы</a>
+    </div>
+  </div>
+</section>
+
+<div class="decor decor--5" aria-hidden="false" aria-label="Декоративные изображения — можно перетаскивать">
+    <div class="decor__inner">
+      <figure class="decor__item" tabindex="0" style="--x:50;--y:72;--w:363px;--rot:-9.5deg;--z:5;--d:0ms;--spill:10px">
+        <img src="assets/img/decor/tex-glass.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:12;--y:30;--w:224px;--rot:7.0deg;--z:3;--d:90ms;--spill:0px">
+        <img src="assets/img/decor/tex-wood.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:88;--y:69;--w:200px;--rot:-4.0deg;--z:4;--d:180ms;--spill:6px">
+        <img src="assets/img/decor/pat-diagonal.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:38;--y:50;--w:261px;--rot:11.5deg;--z:5;--d:270ms;--spill:10px">
+        <img src="assets/img/decor/cut-branch.png" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:62;--y:38;--w:187px;--rot:-3.0deg;--z:3;--d:360ms;--spill:0px">
+        <img src="assets/img/decor/cut-pillow.png" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:24;--y:62;--w:210px;--rot:8.5deg;--z:4;--d:450ms;--spill:6px">
+        <img src="assets/img/decor/pat-stripes.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:76;--y:38;--w:254px;--rot:-7.5deg;--z:5;--d:540ms;--spill:10px">
+        <img src="assets/img/decor/pat-dots.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+    </div>
+  </div>
+
+<section class="sect" id="discuss">
+  <div class="wrap">
+    <div class="sect__head head--split" data-reveal>
+      <div><h2><span class="mask"><span>Обсудим систему умного дома для вашего проекта</span></span></h2></div>
+      <div class="sect__lead"><p>Расскажите, на каком этапе находится дом и какие функции вы хотели бы автоматизировать. Если есть планы, проект инженерных систем или уже выбранное оборудование, приложите их к обращению. Обсудим подходящую конфигурацию и определим формат проектирования и сопровождения настройки.</p></div>
+    </div>
+    <div class="cta" data-reveal>
+      <div><h2>Обсудим ваш проект</h2><p>Расскажите о задаче и приложите исходные материалы, если они есть. Обсудим подходящий состав работ.</p></div>
+      <a class="btn" href="contacts.html">Обсудить мой проект</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot__top">
+      <div class="foot__brand">Проектирование частных домов и участков</div>
+      <div class="foot__links">
+        <a href="privacy.html">Политика обработки персональных данных</a><a href="consent.html">Согласие на обработку персональных данных</a><a href="terms.html">Пользовательское соглашение</a><a href="contacts.html">Контакты</a>
+      </div>
+    </div>
+    <div class="foot__bottom"><span>Реквизиты и контактные данные необходимо заполнить перед публикацией.</span></div>
+  </div>
+</footer>
+
+
+<script src="assets/site.js" defer></script>
+<div class="switcher" role="group" aria-label="Цветовая схема">
+  <p class="switcher__label">Схема</p>
+  <div class="switcher__row">
+    <button class="switcher__sw" data-pal="porto" aria-pressed="false"><i style="background:#13273F"></i>Порто</button>
+    <button class="switcher__sw" data-pal="flora" aria-pressed="false"><i style="background:#260729"></i>Флора</button>
+    <button class="switcher__sw" data-pal="tundra" aria-pressed="false"><i style="background:#2B2E36"></i>Тундра</button>
+  </div>
+  <div class="switcher__row">
+    <button class="switcher__sw switcher__mode" data-mode="light" aria-pressed="false">Светлая</button>
+    <button class="switcher__sw switcher__mode" data-mode="dark" aria-pressed="false">Тёмная</button>
+  </div>
+</div>
+<script src="assets/theme.js"></script>
+
+  <div class="decor-layer" aria-hidden="false"></div>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ru" data-palette="porto" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Опросник по дому и участку: 7 разделов, итоговая концепция в PDF.">
+<meta name="theme-color" content="#0B1D22">
+<title>Опросник — Проект-Комплект</title>
+<link rel="stylesheet" href="assets/site.css">
+<style>
+.bld{padding:clamp(110px,13vh,140px) var(--pad,24px) clamp(50px,7vh,80px)}
+.bld__inner{max-width:1100px;margin-inline:auto}
+.bld__eyebrow{font-family:var(--sans);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--sage);margin:0 0 12px}
+.bld h1{font-family:var(--serif);font-weight:500;font-size:clamp(30px,4vw,48px);line-height:1.12;margin:0 0 12px;color:var(--cream)}
+.bld__lead{max-width:62ch;margin:0 0 26px;color:var(--muted);font-size:15px;line-height:1.7}
+.back{display:inline-block;font-family:var(--sans);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);text-decoration:none;margin:0 0 14px}
+.back:hover{color:var(--cream)}
+
+/* превью */
+.preview{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(18px,3vw,36px);align-items:stretch;margin-bottom:26px}
+@media(max-width:860px){.preview{grid-template-columns:1fr}}
+.photo{position:relative;border:1px solid var(--line);background:var(--ink-2);overflow:hidden}
+.photo img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;transition:opacity .4s ease}
+.photo__tag{position:absolute;left:0;top:0;background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:10px;letter-spacing:.16em;text-transform:uppercase;padding:7px 12px}
+.photo__cap{border-top:1px solid var(--line);padding:12px 14px;font-size:13px;line-height:1.6;color:var(--muted)}
+.photo__cap b{color:var(--cream);font-weight:500}
+.mini{border:1px solid var(--line);background:var(--ink-2);padding:18px 20px;display:flex;flex-direction:column;gap:10px}
+.mini h2{font-family:var(--serif);font-weight:500;font-size:20px;margin:0;color:var(--cream)}
+.mini ul{list-style:none;margin:0;padding:0;font-size:13px;color:var(--muted)}
+.mini li{padding:6px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px}
+.mini li b{color:var(--cream);font-weight:400;text-align:right}
+
+/* слайдер */
+.slider{border:1px solid var(--line);background:var(--ink-2);padding:clamp(18px,2.6vw,30px)}
+.slider__bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+.slider__count{font-family:var(--sans);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage)}
+.dots{display:flex;gap:6px}
+.dots button{width:26px;height:4px;border:0;background:var(--line);padding:0;cursor:pointer;border-radius:2px}
+.dots button[aria-current="step"]{background:var(--cream)}
+.slide{display:none}
+.slide.is-on{display:block}
+.slide h2{font-family:var(--serif);font-weight:500;font-size:clamp(22px,2.4vw,28px);margin:0 0 6px;color:var(--cream)}
+.slide__hint{margin:0 0 18px;font-size:13px;color:var(--faint);line-height:1.6}
+.grp{border:0;padding:0;margin:0 0 18px}
+.grp legend,.grp__t{font-family:var(--sans);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);margin:0 0 8px;padding:0}
+.opts{display:flex;flex-wrap:wrap;gap:7px}
+.opt{appearance:none;font-family:var(--sans);font-size:12.5px;line-height:1.3;color:var(--cream);background:transparent;border:1px solid var(--line);padding:8px 12px;cursor:pointer;border-radius:2px}
+.opt:hover{border-color:var(--sage)}
+.opt[aria-pressed="true"]{background:var(--cream);color:var(--ink);border-color:var(--cream)}
+.styles{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+@media(max-width:700px){.styles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.stylecard{appearance:none;padding:0;border:1px solid var(--line);background:transparent;cursor:pointer;border-radius:2px;overflow:hidden;display:block;text-align:left}
+.stylecard img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.stylecard span{display:block;font-family:var(--sans);font-size:12px;color:var(--cream);padding:7px 8px;border-top:1px solid var(--line)}
+.stylecard[aria-pressed="true"]{border-color:var(--cream)}
+.stylecard[aria-pressed="true"] span{background:var(--cream);color:var(--ink)}
+.field{display:block;margin:0 0 14px}
+.field > span{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);margin:0 0 6px;font-family:var(--sans)}
+.field input,.field textarea{width:100%;box-sizing:border-box;font-family:var(--sans);font-size:13.5px;color:var(--cream);background:transparent;border:1px solid var(--line);border-radius:2px;padding:10px 12px}
+.field textarea{min-height:88px;resize:vertical}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.row .field{flex:1 1 180px;margin-bottom:0}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;line-height:1.6;color:var(--muted);margin:0 0 14px}
+.check input{margin-top:4px;flex:none}
+.check a{color:var(--cream);text-decoration:underline}
+.nav-row{display:flex;justify-content:space-between;gap:10px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+.btn{font-family:var(--sans);font-size:13px;letter-spacing:.04em;background:var(--cream);color:var(--ink);border:1px solid var(--cream);padding:12px 20px;cursor:pointer;border-radius:2px}
+.btn--ghost{background:transparent;color:var(--cream)}
+.btn:disabled{opacity:.4;cursor:default}
+.btn:hover:not(:disabled){opacity:.9}
+
+/* концепция внизу */
+.concept{border:1px solid var(--line);background:var(--ink-2);padding:clamp(18px,2.6vw,30px);margin-top:26px}
+.concept h2{font-family:var(--serif);font-weight:500;font-size:24px;margin:0 0 14px;color:var(--cream)}
+.concept ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:4px 24px}
+.concept li{font-size:13px;line-height:1.6;color:var(--muted);border-bottom:1px solid var(--line);padding:7px 0;display:flex;justify-content:space-between;gap:10px}
+.concept li b{color:var(--cream);font-weight:400;text-align:right}
+.concept__actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.status{margin:12px 0 0;font-size:12.5px;line-height:1.6;color:var(--sage);min-height:0}
+.status:empty{display:none}
+.status.is-err{color:#b86a4e}
+.disclaimer{margin:14px 0 0;font-size:11.5px;line-height:1.6;color:var(--faint)}
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:26px}
+.notes article{border-top:1px solid var(--line);padding-top:12px}
+.notes b{display:block;font-family:var(--serif);font-size:17px;font-weight:500;color:var(--cream);margin-bottom:4px}
+.notes p{margin:0;font-size:12.5px;line-height:1.65;color:var(--muted)}
+</style>
+<style>
+.sv{padding:clamp(110px,13vh,140px) var(--pad,24px) 60px}
+.sv__inner{max-width:900px;margin-inline:auto}
+.sv__back{display:inline-block;font-family:var(--sans);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);text-decoration:none;margin:0 0 14px}
+.sv h1{font-family:var(--serif);font-weight:500;font-size:clamp(28px,4vw,44px);margin:0 0 10px;color:var(--cream)}
+.sv__lead{color:var(--muted);font-size:14px;line-height:1.7;margin:0 0 22px}
+.sv__bar{height:3px;background:var(--line);margin-bottom:8px}
+.sv__fill{height:3px;background:var(--cream);width:0;transition:width .3s ease}
+.sv__count{font-family:var(--sans);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:20px}
+.sv-title{font-family:var(--serif);font-weight:500;font-size:28px;color:var(--cream);margin:0 0 6px}
+.sv-hint{font-size:13px;color:var(--faint);line-height:1.6;margin:0 0 18px}
+.sq{border:1px solid var(--line);background:var(--ink-2);padding:16px 18px;margin-bottom:12px;transition:border-color .2s}
+.sq--miss{border-color:#D9A441;box-shadow:0 0 0 1px #D9A441 inset}
+.sq__id{font-family:var(--sans);font-size:10px;letter-spacing:.14em;color:var(--sage)}
+.sq__q{font-family:var(--sans);font-weight:500;font-size:15px;color:var(--cream);margin:4px 0 10px;line-height:1.4}
+.sq__hint{font-size:12px;color:var(--faint);margin:0 0 8px}
+.field-in{width:100%;box-sizing:border-box;font-family:var(--sans);font-size:14px;color:var(--cream);background:transparent;border:1px solid var(--line);border-radius:2px;padding:10px 12px}
+textarea.field-in{min-height:80px;resize:vertical}
+.sv-sec{border-top:1px solid var(--line);padding:14px 0 6px}
+.sv-sec__t{font-family:var(--serif);font-size:20px;font-weight:500;color:var(--cream);margin:0 0 8px}
+.sv-line{font-size:13.5px;line-height:1.6;color:var(--muted);margin:0 0 6px}
+.sv-line--empty{color:var(--faint);font-style:italic}
+.sv-nav{display:flex;justify-content:space-between;gap:10px;margin-top:22px;padding-top:16px;border-top:1px solid var(--line)}
+.btn--cta{background:var(--cream);color:var(--ink)}
+</style>
+</head>
+<body>
+<header class="topbar" id="topbar">
+  <a class="brand" href="index.html" aria-label="Проект-Комплект — на главную"><img class="logo--light" src="assets/img/logo-light.png" alt="Проект-Комплект"><img class="logo--dark" src="assets/img/logo-dark.png" alt="" aria-hidden="true"></a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+</header>
+
+<nav class="menu" id="menu" aria-hidden="true">
+  <div class="menu__grid">
+    <div class="menu__nav">
+      <a class="mlink" href="index.html"><span class="mlink__inner"><span class="mlink__num">00</span><span>Главная</span></span></a>
+      <a class="mlink" href="architecture.html"><span class="mlink__inner"><span class="mlink__num">01</span><span>Архитектурное проектирование</span></span></a>
+      <a class="mlink" href="architecture.html"><span class="mlink__inner"><span class="mlink__num">02</span><span>Архитектура</span></span></a>
+      <a class="mlink" href="structures.html"><span class="mlink__inner"><span class="mlink__num">03</span><span>Конструктив</span></span></a>
+      <a class="mlink" href="engineering.html"><span class="mlink__inner"><span class="mlink__num">04</span><span>Инженерные системы</span></span></a>
+      <a class="mlink" href="smart-home.html"><span class="mlink__inner"><span class="mlink__num">05</span><span>Умный дом</span></span></a>
+      <a class="mlink" href="pools-spa.html"><span class="mlink__inner"><span class="mlink__num">06</span><span>Бассейны и SPA</span></span></a>
+      <a class="mlink" href="landscape.html"><span class="mlink__inner"><span class="mlink__num">07</span><span>Ландшафт</span></span></a>
+    </div>
+  </div>
+</nav>
+<main>
+<section class="sv" id="surveyTop"><div class="sv__inner">
+  <a class="sv__back" href="contacts.html">← Контакты</a>
+  <h1>Опросник: дом и участок</h1>
+  <p class="sv__lead">Ответьте на вопросы по разделам. Пустые пункты не мешают: они попадут в PDF серым цветом. Итог — концепция, которую можно сохранить в PDF.</p>
+  <div class="sv__bar"><div class="sv__fill" id="surveyBar"></div></div>
+  <div class="sv__count" id="surveyCount"></div>
+  <div id="surveyMain"></div>
+  <div class="sv-nav">
+    <button class="btn btn--ghost" type="button" id="prevBtn">← Назад</button>
+    <button class="btn" type="button" id="nextBtn">Далее →</button>
+  </div>
+</div></section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="foot__top">
+      <div class="foot__brand">Проектирование частных домов и участков</div>
+      <div class="foot__links">
+        <a href="privacy.html">Политика обработки персональных данных</a><a href="consent.html">Согласие на обработку персональных данных</a><a href="terms.html">Пользовательское соглашение</a><a href="contacts.html">Контакты</a>
+      </div>
+    </div>
+    <div class="foot__bottom"><span>Реквизиты и контактные данные необходимо заполнить перед публикацией.</span></div>
+  </div>
+</footer>
+<script src="assets/site.js" defer></script>
+<script src="assets/theme.js"></script>
+<script src="assets/survey-pages.js"></script>
+<script src="assets/survey-pdf.js" defer></script>
+<script src="assets/survey-text.js" defer></script>
+<script src="assets/survey.js" defer></script>
+</body></html>

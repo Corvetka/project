@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="ru" data-palette="porto" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Проектирование инженерных систем частных домов: отопление, вентиляция, водоснабжение, канализация, электроснабжение и слаботочные системы в согласовании с архитектурой и конструктивом.">
+<meta name="theme-color" content="#0B1D22">
+<title>Инженерные системы — Проект-Комплект</title>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header class="topbar" id="topbar">
+  <a class="brand" href="index.html" aria-label="Проект-Комплект — на главную"><img src="assets/img/logo-light.png" alt="Проект-Комплект" class="logo--light"><img class="logo--dark" src="assets/img/logo-dark.png" alt="" aria-hidden="true"></a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+</header>
+
+<nav class="menu" id="menu" aria-hidden="true">
+  <div class="menu__grid">
+    <div class="menu__nav">
+      <a class="mlink" href="index.html"><span class="mlink__inner"><span class="mlink__num">00</span><span>Главная</span></span></a>
+      <a class="mlink" href="architecture.html"><span class="mlink__inner"><span class="mlink__num">01</span><span>Архитектурное проектирование</span></span></a>
+      <a class="mlink" href="architecture.html"><span class="mlink__inner"><span class="mlink__num">02</span><span>Архитектура</span></span></a>
+      <a class="mlink" href="structures.html"><span class="mlink__inner"><span class="mlink__num">03</span><span>Конструктив</span></span></a>
+      <a class="mlink" href="engineering.html"><span class="mlink__inner"><span class="mlink__num">04</span><span>Инженерные системы</span></span></a>
+      <a class="mlink" href="smart-home.html"><span class="mlink__inner"><span class="mlink__num">05</span><span>Умный дом</span></span></a>
+      <a class="mlink" href="pools-spa.html"><span class="mlink__inner"><span class="mlink__num">06</span><span>Бассейны и SPA</span></span></a>
+      <a class="mlink" href="landscape.html"><span class="mlink__inner"><span class="mlink__num">07</span><span>Ландшафт</span></span></a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<section class="hero">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="hero__inner">
+    <h1 class="hero__title">
+      <span class="mask is-in pt-1"><span>Инженерные системы</span></span>
+    </h1>
+    <p class="strongline" data-reveal>Инженерные системы, продуманные вместе с домом</p>
+    <p class="hero__lead">Проектируем инженерные системы для частных домов и сооружений: отопление, вентиляцию, водоснабжение, канализацию и электроснабжение. Учитываем архитектуру, особенности участка и сценарии жизни, чтобы оборудование, коммуникации и помещения были согласованы между собой ещё на этапе проекта.</p>
+    <div class="hero__actions">
+      <a class="btn" href="contacts.html">Обсудить мой проект</a>
+      <a class="btn btn--ghost" href="#systems">Посмотреть состав инженерного проекта</a>
+    </div>
+  </div>
+</section>
+
+<div class="decor decor--1" aria-hidden="false" aria-label="Декоративные изображения — можно перетаскивать">
+    <div class="decor__inner">
+      <figure class="decor__item" tabindex="0" style="--x:38;--y:50;--w:254px;--rot:-9.5deg;--z:5;--d:0ms;--spill:10px">
+        <img src="assets/img/decor/pat-diagonal.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:62;--y:38;--w:161px;--rot:7.0deg;--z:3;--d:90ms;--spill:0px">
+        <img src="assets/img/decor/cut-branch.png" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:24;--y:62;--w:238px;--rot:-4.0deg;--z:4;--d:180ms;--spill:6px">
+        <img src="assets/img/decor/cut-pillow.png" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:76;--y:36;--w:267px;--rot:11.5deg;--z:5;--d:270ms;--spill:10px">
+        <img src="assets/img/decor/pat-stripes.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:50;--y:75;--w:157px;--rot:-3.0deg;--z:3;--d:360ms;--spill:0px">
+        <img src="assets/img/decor/pat-dots.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:12;--y:30;--w:238px;--rot:8.5deg;--z:4;--d:450ms;--spill:6px">
+        <img src="assets/img/decor/pat-weave.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:88;--y:70;--w:363px;--rot:-7.5deg;--z:5;--d:540ms;--spill:10px">
+        <img src="assets/img/decor/tex-paint.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+    </div>
+  </div>
+
+<section class="sect" id="idea">
+  <div class="wrap">
+    <div class="sect__head head--split" data-reveal>
+      <div><h2><span class="mask"><span>Комфорт начинается с согласованных решений</span></span></h2></div>
+      <div class="sect__lead"><p>Инженерные системы определяют, как дом будет работать каждый день: насколько равномерно он прогревается, как организован воздухообмен, откуда поступает вода и как отводятся стоки. Важно не просто подобрать оборудование, а связать все системы с планировкой, конструкциями и образом жизни будущих жильцов.</p><p>Мы закладываем инженерные решения в общую логику проекта, чтобы заранее предусмотреть места для оборудования и трасс, согласовать технические помещения и сократить риск конфликтов между коммуникациями на этапе строительства.</p></div>
+    </div>
+    <div class="flow" data-reveal style="--i:2">
+      <article class="flow__item"><h3><span class="mark">Взаимосвязь разделов.</span></h3><p>Согласуем инженерные трассы с архитектурой, конструкциями и интерьерными решениями в пределах согласованного состава работ.</p></article>
+      <article class="flow__item"><h3><span class="mark">Практичность в эксплуатации.</span></h3><p>Учитываем доступ для обслуживания оборудования и понятную логику управления системами.</p></article>
+      <article class="flow__item"><h3><span class="mark">Подбор под задачу.</span></h3><p>Принимаем решения с учётом параметров объекта, доступных ресурсов и требований заказчика.</p></article>
+    </div>
+  </div>
+</section>
+
+<div class="decor decor--2" aria-hidden="false" aria-label="Декоративные изображения — можно перетаскивать">
+    <div class="decor__inner">
+      <figure class="decor__item" tabindex="0" style="--x:62;--y:38;--w:224px;--rot:6.5deg;--z:3;--d:0ms;--spill:0px">
+        <img src="assets/img/decor/tex-velvet.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:24;--y:62;--w:363px;--rot:-11.0deg;--z:5;--d:90ms;--spill:10px">
+        <img src="assets/img/decor/tex-glass.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:76;--y:24;--w:285px;--rot:4.0deg;--z:4;--d:180ms;--spill:6px">
+        <img src="assets/img/decor/tex-wood.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:50;--y:75;--w:157px;--rot:-6.5deg;--z:3;--d:270ms;--spill:0px">
+        <img src="assets/img/decor/pat-diagonal.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:12;--y:37;--w:261px;--rot:9.0deg;--z:5;--d:360ms;--spill:10px">
+        <img src="assets/img/decor/cut-branch.png" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:88;--y:70;--w:238px;--rot:-4.5deg;--z:4;--d:450ms;--spill:6px">
+        <img src="assets/img/decor/cut-pillow.png" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:38;--y:50;--w:165px;--rot:12.0deg;--z:3;--d:540ms;--spill:0px">
+        <img src="assets/img/decor/pat-stripes.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+    </div>
+  </div>
+
+<section class="sect" id="systems">
+  <div class="wrap">
+    <div class="sect__head head--split" data-reveal>
+      <div><h2><span class="mask"><span>Все основные системы — в единой логике</span></span></h2></div>
+      <div class="sect__lead"><p>Состав проекта зависит от объекта, технических условий и задач заказчика. В зависимости от проекта можем прорабатывать следующие направления:</p></div>
+    </div>
+    <div class="grid grid--2" data-reveal style="--i:1">
+      <article class="card"><h3>Отопление.</h3><p>Подбор и размещение отопительных приборов, тёплых полов и других элементов системы с учётом теплопотерь и планировки.</p></article>
+      <article class="card"><h3>Вентиляция и кондиционирование.</h3><p>Решения для воздухообмена, подачи свежего воздуха и поддержания комфортного микроклимата.</p></article>
+      <article class="card"><h3>Водоснабжение.</h3><p>Организация подачи холодной и горячей воды, размещение оборудования и трасс.</p></article>
+      <article class="card"><h3>Канализация и водоотведение.</h3><p>Прокладка внутренних канализационных сетей и согласование решений с условиями участка и доступными подключениями.</p></article>
+      <article class="card"><h3>Электроснабжение и освещение.</h3><p>Распределение электрических нагрузок, размещение основных элементов электросети и подготовка решений по освещению в рамках согласованного объёма.</p></article>
+      <article class="card"><h3>Слаботочные системы.</h3><p>Кабельная инфраструктура для связи, сети и других предусмотренных проектом устройств.</p></article>
+    </div>
+    <p class="note sect__cta" data-reveal>Примечание: окончательный перечень систем и состав документации определяются после изучения исходных данных и согласования задач проекта.</p>
+  </div>
+</section>
+
+<div class="decor decor--3" aria-hidden="false" aria-label="Декоративные изображения — можно перетаскивать">
+    <div class="decor__inner">
+      <figure class="decor__item" tabindex="0" style="--x:24;--y:62;--w:254px;--rot:-9.5deg;--z:5;--d:0ms;--spill:10px">
+        <img src="assets/img/decor/pat-dots.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:76;--y:24;--w:187px;--rot:7.0deg;--z:3;--d:90ms;--spill:0px">
+        <img src="assets/img/decor/pat-weave.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:50;--y:76;--w:285px;--rot:-4.0deg;--z:4;--d:180ms;--spill:6px">
+        <img src="assets/img/decor/tex-paint.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:12;--y:30;--w:363px;--rot:11.5deg;--z:5;--d:270ms;--spill:10px">
+        <img src="assets/img/decor/tex-velvet.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:88;--y:70;--w:224px;--rot:-3.0deg;--z:3;--d:360ms;--spill:0px">
+        <img src="assets/img/decor/tex-glass.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:38;--y:50;--w:285px;--rot:8.5deg;--z:4;--d:450ms;--spill:6px">
+        <img src="assets/img/decor/tex-wood.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:62;--y:38;--w:254px;--rot:-7.5deg;--z:5;--d:540ms;--spill:10px">
+        <img src="assets/img/decor/pat-diagonal.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+    </div>
+  </div>
+
+<section class="sect sect--deck" id="process">
+  <div class="wrap">
+    <div class="sect__head" data-reveal><h2><span class="mask"><span>От исходных данных к согласованной инженерии</span></span></h2></div>
+  </div>
+
+  <div class="deck" id="deck" data-reveal>
+    <div class="wrap deck__stage">
+
+      <button class="deck__arrow deck__arrow--prev" type="button" id="deckPrev" aria-label="Предыдущий шаг"></button>
+      <button class="deck__arrow deck__arrow--next" type="button" id="deckNext" aria-label="Следующий шаг"></button>
+
+      <div class="deck__viewport" id="deckViewport">
+      <ul class="deck__track" id="deckTrack" tabindex="0">
+        <li class="deck__slide" aria-roledescription="слайд" aria-label="1 из 5">
+  <h3><span class="step">01.</span><span>Изучаем объект и задачу.</span></h3>
+  <p>Уточняем архитектурные решения, параметры участка, доступные подключения и пожелания по комфорту и эксплуатации.</p>
+</li>
+        <li class="deck__slide" aria-roledescription="слайд" aria-label="2 из 5">
+  <h3><span class="step">02.</span><span>Определяем состав систем.</span></h3>
+  <p>Согласуем, какие инженерные разделы необходимы и какие исходные данные потребуются для проектирования.</p>
+</li>
+        <li class="deck__slide" aria-roledescription="слайд" aria-label="3 из 5">
+  <h3><span class="step">03.</span><span>Разрабатываем решения.</span></h3>
+  <p>Продумываем расположение оборудования, основные трассы и взаимосвязь систем с помещениями и конструкциями.</p>
+</li>
+        <li class="deck__slide" aria-roledescription="слайд" aria-label="4 из 5">
+  <h3><span class="step">04.</span><span>Согласуем между собой разделы.</span></h3>
+  <p>Проверяем ключевые пересечения и уточняем решения совместно с другими участниками проектирования.</p>
+</li>
+        <li class="deck__slide" aria-roledescription="слайд" aria-label="5 из 5">
+  <h3><span class="step">05.</span><span>Готовим документацию.</span></h3>
+  <p>Передаём чертежи и материалы в согласованном составе, необходимые для дальнейших этапов работ.</p>
+</li>
+      </ul>
+      </div>
+
+      <div class="deck__foot">
+        <div class="deck__dots" id="deckDots">
+        <button class="deck__dot is-active" type="button" data-go="0" aria-label="Шаг 1"></button>
+        <button class="deck__dot" type="button" data-go="1" aria-label="Шаг 2"></button>
+        <button class="deck__dot" type="button" data-go="2" aria-label="Шаг 3"></button>
+        <button class="deck__dot" type="button" data-go="3" aria-label="Шаг 4"></button>
+        <button class="deck__dot" type="button" data-go="4" aria-label="Шаг 5"></button>
+      </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap"><div class="sect__cta" data-reveal><a class="btn" href="contacts.html">Обсудить задачу</a></div></div>
+</section>
+
+<div class="decor decor--4" aria-hidden="false" aria-label="Декоративные изображения — можно перетаскивать">
+    <div class="decor__inner">
+      <figure class="decor__item" tabindex="0" style="--x:76;--y:25;--w:161px;--rot:6.5deg;--z:3;--d:0ms;--spill:0px">
+        <img src="assets/img/decor/cut-branch.png" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:50;--y:68;--w:303px;--rot:-11.0deg;--z:5;--d:90ms;--spill:10px">
+        <img src="assets/img/decor/cut-pillow.png" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:12;--y:30;--w:210px;--rot:4.0deg;--z:4;--d:180ms;--spill:6px">
+        <img src="assets/img/decor/pat-stripes.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:88;--y:70;--w:157px;--rot:-6.5deg;--z:3;--d:270ms;--spill:0px">
+        <img src="assets/img/decor/pat-dots.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:38;--y:50;--w:303px;--rot:9.0deg;--z:5;--d:360ms;--spill:10px">
+        <img src="assets/img/decor/pat-weave.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:62;--y:38;--w:285px;--rot:-4.5deg;--z:4;--d:450ms;--spill:6px">
+        <img src="assets/img/decor/tex-paint.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:24;--y:62;--w:224px;--rot:12.0deg;--z:3;--d:540ms;--spill:0px">
+        <img src="assets/img/decor/tex-velvet.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+    </div>
+  </div>
+
+<section class="sect" id="coherence">
+  <div class="wrap">
+    <div class="sect__head head--split" data-reveal>
+      <div><h2><span class="mask"><span>Инженерия должна быть частью общего проекта</span></span></h2></div>
+      <div class="sect__lead"><p>Мы работаем с инженерией как с частью единого проекта — вместе с архитектурой, конструкциями и решениями для участка. Это помогает видеть взаимосвязи до начала строительства, а не искать место для коммуникаций по ходу работ.</p></div>
+    </div>
+    <p class="sect__note" data-reveal>Смежные направления:</p>
+    <div class="card__links" data-reveal>
+      <a class="tlink" href="architecture.html">Архитектура</a><a class="tlink" href="structures.html">Конструктив</a><a class="tlink" href="smart-home.html">Умный дом</a><a class="tlink" href="pools-spa.html">Бассейны и SPA</a><a class="tlink" href="landscape.html">Ландшафт</a>
+    </div>
+  </div>
+</section>
+
+<div class="decor decor--5" aria-hidden="false" aria-label="Декоративные изображения — можно перетаскивать">
+    <div class="decor__inner">
+      <figure class="decor__item" tabindex="0" style="--x:50;--y:72;--w:363px;--rot:-9.5deg;--z:5;--d:0ms;--spill:10px">
+        <img src="assets/img/decor/tex-glass.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:12;--y:30;--w:224px;--rot:7.0deg;--z:3;--d:90ms;--spill:0px">
+        <img src="assets/img/decor/tex-wood.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:88;--y:69;--w:200px;--rot:-4.0deg;--z:4;--d:180ms;--spill:6px">
+        <img src="assets/img/decor/pat-diagonal.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:38;--y:50;--w:261px;--rot:11.5deg;--z:5;--d:270ms;--spill:10px">
+        <img src="assets/img/decor/cut-branch.png" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:62;--y:38;--w:187px;--rot:-3.0deg;--z:3;--d:360ms;--spill:0px">
+        <img src="assets/img/decor/cut-pillow.png" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:24;--y:62;--w:210px;--rot:8.5deg;--z:4;--d:450ms;--spill:6px">
+        <img src="assets/img/decor/pat-stripes.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+      <figure class="decor__item" tabindex="0" style="--x:76;--y:38;--w:254px;--rot:-7.5deg;--z:5;--d:540ms;--spill:10px">
+        <img src="assets/img/decor/pat-dots.jpg" alt="" loading="lazy" decoding="async" draggable="false">
+      </figure>
+    </div>
+  </div>
+
+<section class="sect" id="discuss">
+  <div class="wrap">
+    <div class="sect__head head--split" data-reveal>
+      <div><h2><span class="mask"><span>Обсудим инженерные системы для вашего дома</span></span></h2></div>
+      <div class="sect__lead"><p>Расположение котельной влияет на планировку и трассы коммуникаций. Вентиляция требует места для оборудования и воздуховодов. Электрические точки и системы управления важно предусмотреть до завершения конструктивных и отделочных решений. Когда инженерные системы проектируются в связке с домом, такие вопросы можно согласовать заранее.</p><p>Расскажите о проекте и о том, какие задачи важно решить. Если у вас уже есть планы, эскизы или технические условия, приложите их к обращению. Мы уточним исходные данные и поможем определить необходимый состав инженерного проекта.</p></div>
+    </div>
+    <div class="cta" data-reveal>
+      <div><h2>Обсудим ваш проект</h2><p>Расскажите о задаче и приложите исходные материалы, если они есть. Обсудим подходящий состав работ.</p></div>
+      <a class="btn" href="contacts.html">Обсудить мой проект</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot__top">
+      <div class="foot__brand">Проектирование частных домов и участков</div>
+      <div class="foot__links">
+        <a href="privacy.html">Политика обработки персональных данных</a><a href="consent.html">Согласие на обработку персональных данных</a><a href="terms.html">Пользовательское соглашение</a><a href="contacts.html">Контакты</a>
+      </div>
+    </div>
+    <div class="foot__bottom"><span>Реквизиты и контактные данные необходимо заполнить перед публикацией.</span></div>
+  </div>
+</footer>
+
+
+<script src="assets/site.js" defer></script>
+<div class="switcher" role="group" aria-label="Цветовая схема">
+  <p class="switcher__label">Схема</p>
+  <div class="switcher__row">
+    <button class="switcher__sw" data-pal="porto" aria-pressed="false"><i style="background:#13273F"></i>Порто</button>
+    <button class="switcher__sw" data-pal="flora" aria-pressed="false"><i style="background:#260729"></i>Флора</button>
+    <button class="switcher__sw" data-pal="tundra" aria-pressed="false"><i style="background:#2B2E36"></i>Тундра</button>
+  </div>
+  <div class="switcher__row">
+    <button class="switcher__sw switcher__mode" data-mode="light" aria-pressed="false">Светлая</button>
+    <button class="switcher__sw switcher__mode" data-mode="dark" aria-pressed="false">Тёмная</button>
+  </div>
+</div>
+<script src="assets/theme.js"></script>
+
+  <div class="decor-layer" aria-hidden="false"></div>
+</body>
+</html>

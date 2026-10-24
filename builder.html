@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="ru" data-palette="porto" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Конструктор дома: стиль, этажность, площадь, крыша, остекление и детали. Предварительная концепция в PDF и заявка в разделе «Контакты».">
+<meta name="theme-color" content="#0B1D22">
+<title>Конструктор дома — Проект-Комплект</title>
+<link rel="stylesheet" href="assets/site.css">
+<style>
+.bld{padding:clamp(110px,13vh,140px) var(--pad,24px) clamp(50px,7vh,80px)}
+.bld__inner{max-width:1100px;margin-inline:auto}
+.bld__eyebrow{font-family:var(--sans);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--sage);margin:0 0 12px}
+.bld h1{font-family:var(--serif);font-weight:500;font-size:clamp(30px,4vw,48px);line-height:1.12;margin:0 0 12px;color:var(--cream)}
+.bld__lead{max-width:62ch;margin:0 0 26px;color:var(--muted);font-size:15px;line-height:1.7}
+.back{display:inline-block;font-family:var(--sans);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);text-decoration:none;margin:0 0 14px}
+.back:hover{color:var(--cream)}
+
+/* превью */
+.preview{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(18px,3vw,36px);align-items:stretch;margin-bottom:26px}
+@media(max-width:860px){.preview{grid-template-columns:1fr}}
+.photo{position:relative;border:1px solid var(--line);background:var(--ink-2);overflow:hidden}
+.photo img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;transition:opacity .4s ease}
+.photo__tag{position:absolute;left:0;top:0;background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:10px;letter-spacing:.16em;text-transform:uppercase;padding:7px 12px}
+.photo__cap{border-top:1px solid var(--line);padding:12px 14px;font-size:13px;line-height:1.6;color:var(--muted)}
+.photo__cap b{color:var(--cream);font-weight:500}
+.mini{border:1px solid var(--line);background:var(--ink-2);padding:18px 20px;display:flex;flex-direction:column;gap:10px}
+.mini h2{font-family:var(--serif);font-weight:500;font-size:20px;margin:0;color:var(--cream)}
+.mini ul{list-style:none;margin:0;padding:0;font-size:13px;color:var(--muted)}
+.mini li{padding:6px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px}
+.mini li b{color:var(--cream);font-weight:400;text-align:right}
+
+/* слайдер */
+.slider{border:1px solid var(--line);background:var(--ink-2);padding:clamp(18px,2.6vw,30px)}
+.slider__bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+.slider__count{font-family:var(--sans);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage)}
+.dots{display:flex;gap:6px}
+.dots button{width:26px;height:4px;border:0;background:var(--line);padding:0;cursor:pointer;border-radius:2px}
+.dots button[aria-current="step"]{background:var(--cream)}
+.slide{display:none}
+.slide.is-on{display:block}
+.slide h2{font-family:var(--serif);font-weight:500;font-size:clamp(22px,2.4vw,28px);margin:0 0 6px;color:var(--cream)}
+.slide__hint{margin:0 0 18px;font-size:13px;color:var(--faint);line-height:1.6}
+.grp{border:0;padding:0;margin:0 0 18px}
+.grp legend,.grp__t{font-family:var(--sans);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);margin:0 0 8px;padding:0}
+.opts{display:flex;flex-wrap:wrap;gap:7px}
+.opt{appearance:none;font-family:var(--sans);font-size:12.5px;line-height:1.3;color:var(--cream);background:transparent;border:1px solid var(--line);padding:8px 12px;cursor:pointer;border-radius:2px}
+.opt:hover{border-color:var(--sage)}
+.opt[aria-pressed="true"]{background:var(--cream);color:var(--ink);border-color:var(--cream)}
+.styles{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+@media(max-width:700px){.styles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.stylecard{appearance:none;padding:0;border:1px solid var(--line);background:transparent;cursor:pointer;border-radius:2px;overflow:hidden;display:block;text-align:left}
+.stylecard img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.stylecard span{display:block;font-family:var(--sans);font-size:12px;color:var(--cream);padding:7px 8px;border-top:1px solid var(--line)}
+.stylecard[aria-pressed="true"]{border-color:var(--cream)}
+.stylecard[aria-pressed="true"] span{background:var(--cream);color:var(--ink)}
+.field{display:block;margin:0 0 14px}
+.field > span{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);margin:0 0 6px;font-family:var(--sans)}
+.field input,.field textarea{width:100%;box-sizing:border-box;font-family:var(--sans);font-size:13.5px;color:var(--cream);background:transparent;border:1px solid var(--line);border-radius:2px;padding:10px 12px}
+.field textarea{min-height:88px;resize:vertical}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.row .field{flex:1 1 180px;margin-bottom:0}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;line-height:1.6;color:var(--muted);margin:0 0 14px}
+.check input{margin-top:4px;flex:none}
+.check a{color:var(--cream);text-decoration:underline}
+.nav-row{display:flex;justify-content:space-between;gap:10px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+.btn{font-family:var(--sans);font-size:13px;letter-spacing:.04em;background:var(--cream);color:var(--ink);border:1px solid var(--cream);padding:12px 20px;cursor:pointer;border-radius:2px}
+.btn--ghost{background:transparent;color:var(--cream)}
+.btn:disabled{opacity:.4;cursor:default}
+.btn:hover:not(:disabled){opacity:.9}
+
+/* концепция внизу */
+.concept{border:1px solid var(--line);background:var(--ink-2);padding:clamp(18px,2.6vw,30px);margin-top:26px}
+.concept h2{font-family:var(--serif);font-weight:500;font-size:24px;margin:0 0 14px;color:var(--cream)}
+.concept ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:4px 24px}
+.concept li{font-size:13px;line-height:1.6;color:var(--muted);border-bottom:1px solid var(--line);padding:7px 0;display:flex;justify-content:space-between;gap:10px}
+.concept li b{color:var(--cream);font-weight:400;text-align:right}
+.concept__actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.status{margin:12px 0 0;font-size:12.5px;line-height:1.6;color:var(--sage);min-height:0}
+.status:empty{display:none}
+.status.is-err{color:#b86a4e}
+.disclaimer{margin:14px 0 0;font-size:11.5px;line-height:1.6;color:var(--faint)}
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:26px}
+.notes article{border-top:1px solid var(--line);padding-top:12px}
+.notes b{display:block;font-family:var(--serif);font-size:17px;font-weight:500;color:var(--cream);margin-bottom:4px}
+.notes p{margin:0;font-size:12.5px;line-height:1.65;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header class="topbar" id="topbar">
+  <a class="brand" href="index.html" aria-label="Проект-Комплект — на главную"><img class="logo--light" src="assets/img/logo-light.png" alt="Проект-Комплект"><img class="logo--dark" src="assets/img/logo-dark.png" alt="" aria-hidden="true"></a>
+    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+</header>
+
+<nav class="menu" id="menu" aria-hidden="true">
+  <div class="menu__grid">
+    <div class="menu__nav">
+      <a class="mlink" href="index.html"><span class="mlink__inner"><span class="mlink__num">00</span><span>Главная</span></span></a>
+      <a class="mlink" href="architecture.html"><span class="mlink__inner"><span class="mlink__num">01</span><span>Архитектурное проектирование</span></span></a>
+      <a class="mlink" href="architecture.html"><span class="mlink__inner"><span class="mlink__num">02</span><span>Архитектура</span></span></a>
+      <a class="mlink" href="structures.html"><span class="mlink__inner"><span class="mlink__num">03</span><span>Конструктив</span></span></a>
+      <a class="mlink" href="engineering.html"><span class="mlink__inner"><span class="mlink__num">04</span><span>Инженерные системы</span></span></a>
+      <a class="mlink" href="smart-home.html"><span class="mlink__inner"><span class="mlink__num">05</span><span>Умный дом</span></span></a>
+      <a class="mlink" href="pools-spa.html"><span class="mlink__inner"><span class="mlink__num">06</span><span>Бассейны и SPA</span></span></a>
+      <a class="mlink" href="landscape.html"><span class="mlink__inner"><span class="mlink__num">07</span><span>Ландшафт</span></span></a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<section class="bld"><div class="bld__inner">
+  <a class="back" href="architecture.html">← Архитектура</a>
+  <p class="bld__eyebrow">Предварительный подбор</p>
+  <h1>Конструктор дома</h1>
+  <p class="bld__lead">Выберите стиль и параметры. Фото и краткое описание обновляются на ходу. Ниже — концепция,
+    PDF и отправка заявки в раздел «Контакты».</p>
+
+  <div class="preview">
+    <div class="photo">
+      <img id="heroPhoto" src="assets/house-start.jpg" alt="Современный дом">
+      <span class="photo__tag" id="photoTag">Современный стиль</span>
+      <div class="photo__cap"><b id="capStyle">Современный</b> · <span id="capFloors">1 этаж</span> · <span id="capArea">120 м²</span><br>
+        <span id="capDetails">Плоская крыша · открытая терраса</span></div>
+    </div>
+    <div class="mini">
+      <h2>Коротко о доме</h2>
+      <ul id="miniList"></ul>
+    </div>
+  </div>
+
+  <div class="slider" id="slider" aria-label="Параметры дома">
+    <div class="slider__bar">
+      <span class="slider__count" id="sliderCount">Шаг 1 из 6</span>
+      <div class="dots" id="dots"><button type="button" data-go="0" aria-label="Шаг 1" aria-current="step"></button><button type="button" data-go="1" aria-label="Шаг 2"></button><button type="button" data-go="2" aria-label="Шаг 3"></button><button type="button" data-go="3" aria-label="Шаг 4"></button><button type="button" data-go="4" aria-label="Шаг 5"></button><button type="button" data-go="5" aria-label="Шаг 6"></button></div>
+    </div>
+    <div class="slide is-on" data-idx="0"><h2>Стиль дома</h2><p class="slide__hint">Выберите направление. Фото справа обновится.</p>
+      <div class="styles"><button class="stylecard" type="button" data-key="style" data-value="Современный" aria-pressed="true"><img src="assets/house-start.jpg" alt="Современный" width="480" height="360"><span>Современный</span></button>
+<button class="stylecard" type="button" data-key="style" data-value="Минимализм" aria-pressed="false"><img src="assets/minimalism.jpg" alt="Минимализм" width="480" height="360"><span>Минимализм</span></button>
+<button class="stylecard" type="button" data-key="style" data-value="Скандинавский" aria-pressed="false"><img src="assets/skandi.jpg" alt="Скандинавский" width="480" height="360"><span>Скандинавский</span></button>
+<button class="stylecard" type="button" data-key="style" data-value="Классический" aria-pressed="false"><img src="assets/classik.jpg" alt="Классический" width="480" height="360"><span>Классический</span></button>
+<button class="stylecard" type="button" data-key="style" data-value="Барнхаус" aria-pressed="false"><img src="assets/barn.jpg" alt="Барнхаус" width="480" height="360"><span>Барнхаус</span></button></div></div>
+<div class="slide" data-idx="1"><h2>Этажность и площадь</h2><p class="slide__hint">Укажите объём дома.</p>
+      <fieldset class="grp"><legend>Этажность</legend><div class="opts">
+        <button class="opt" type="button" data-key="floors" data-value="1 этаж" aria-pressed="true">1 этаж</button><button class="opt" type="button" data-key="floors" data-value="1 этаж + мансарда" aria-pressed="false">1 этаж + мансарда</button>
+        <button class="opt" type="button" data-key="floors" data-value="2 этажа" aria-pressed="false">2 этажа</button><button class="opt" type="button" data-key="floors" data-value="2 этажа + мансарда" aria-pressed="false">2 этажа + мансарда</button>
+        <button class="opt" type="button" data-key="floors" data-value="3 этажа" aria-pressed="false">3 этажа</button><button class="opt" type="button" data-key="floors" data-value="Другой вариант" aria-pressed="false">Другой вариант</button>
+      </div></fieldset>
+      <div class="row">
+        <label class="field"><span>Площадь основного дома, м²</span>
+          <input id="areaInput" type="number" min="30" max="1000" step="1" value="120" inputmode="numeric"></label>
+        <label class="field"><span>Свой вариант этажности</span>
+          <input id="floorsOther" type="text" placeholder="Например: 1 этаж + цоколь"></label>
+      </div>
+      <fieldset class="grp"><legend>Цокольный этаж</legend><div class="opts">
+        <button class="opt" type="button" data-key="basement" data-value="Планируется" aria-pressed="false">Планируется</button><button class="opt" type="button" data-key="basement" data-value="Только технический подвал" aria-pressed="false">Технический подвал</button>
+        <button class="opt" type="button" data-key="basement" data-value="Нет" aria-pressed="true">Нет</button>
+      </div></fieldset></div>
+<div class="slide" data-idx="2"><h2>Крыша, терраса и гараж</h2><p class="slide__hint">Внешний облик и открытые пространства.</p>
+      <fieldset class="grp"><legend>Тип крыши</legend><div class="opts">
+        <button class="opt" type="button" data-key="roof" data-value="Плоская" aria-pressed="true">Плоская</button><button class="opt" type="button" data-key="roof" data-value="Односкатная" aria-pressed="false">Односкатная</button>
+        <button class="opt" type="button" data-key="roof" data-value="Двускатная" aria-pressed="false">Двускатная</button><button class="opt" type="button" data-key="roof" data-value="Вальмовая" aria-pressed="false">Вальмовая</button>
+      </div></fieldset>
+      <fieldset class="grp"><legend>Терраса</legend><div class="opts">
+        <button class="opt" type="button" data-key="terrace" data-value="Без террасы" aria-pressed="false">Нет</button><button class="opt" type="button" data-key="terrace" data-value="Открытая терраса" aria-pressed="true">Открытая</button>
+        <button class="opt" type="button" data-key="terrace" data-value="Крытая терраса" aria-pressed="false">Крытая</button>
+      </div></fieldset>
+      <fieldset class="grp"><legend>Балкон</legend><div class="opts">
+        <button class="opt" type="button" data-key="balcony" data-value="Без балкона" aria-pressed="true">Нет</button><button class="opt" type="button" data-key="balcony" data-value="Один балкон" aria-pressed="false">Один</button>
+        <button class="opt" type="button" data-key="balcony" data-value="Несколько балконов" aria-pressed="false">Несколько</button>
+      </div></fieldset>
+      <fieldset class="grp"><legend>Гараж</legend><div class="opts">
+        <button class="opt" type="button" data-key="garage" data-value="Без гаража" aria-pressed="true">Нет</button><button class="opt" type="button" data-key="garage" data-value="Пристроенный гараж" aria-pressed="false">Пристроенный</button>
+        <button class="opt" type="button" data-key="garage" data-value="Встроенный гараж" aria-pressed="false">Встроенный</button>
+      </div></fieldset></div>
+<div class="slide" data-idx="3"><h2>Остекление и фасад</h2><p class="slide__hint">Окна, мансарда и материал фасада.</p>
+      <fieldset class="grp"><legend>Остекление</legend><div class="opts">
+        <button class="opt" type="button" data-key="windows" data-value="Обычные окна" aria-pressed="false">Обычные окна</button><button class="opt" type="button" data-key="windows" data-value="Панорамные окна" aria-pressed="true">Панорамные</button>
+        <button class="opt" type="button" data-key="windows" data-value="Максимальное остекление" aria-pressed="false">Максимальное</button>
+      </div></fieldset>
+      <fieldset class="grp"><legend>Мансардные и кровельные окна</legend><div class="opts">
+        <button class="opt" type="button" data-key="roofwin" data-value="Нужны" aria-pressed="false">Нужны</button><button class="opt" type="button" data-key="roofwin" data-value="На усмотрение архитектора" aria-pressed="true">На усмотрение архитектора</button>
+        <button class="opt" type="button" data-key="roofwin" data-value="Не нужны" aria-pressed="false">Не нужны</button>
+      </div></fieldset>
+      <fieldset class="grp"><legend>Материал фасада</legend><div class="opts">
+        <button class="opt" type="button" data-key="facade" data-value="Штукатурка" aria-pressed="false">Штукатурка</button><button class="opt" type="button" data-key="facade" data-value="Дерево" aria-pressed="false">Дерево</button>
+        <button class="opt" type="button" data-key="facade" data-value="Камень" aria-pressed="false">Камень</button><button class="opt" type="button" data-key="facade" data-value="Комбинированный фасад" aria-pressed="true">Комбинация</button>
+      </div></fieldset></div>
+<div class="slide" data-idx="4"><h2>Спальня, двусветная гостиная и лифт</h2><p class="slide__hint">Удобство внутри дома.</p>
+      <fieldset class="grp"><legend>Спальня и кабинет на первом этаже</legend><div class="opts">
+        <button class="opt" type="button" data-key="ground" data-value="Да, и спальня, и кабинет" aria-pressed="false">Спальня и кабинет</button>
+        <button class="opt" type="button" data-key="ground" data-value="Только одно из двух" aria-pressed="false">Одно из двух</button><button class="opt" type="button" data-key="ground" data-value="Не нужно" aria-pressed="true">Не нужно</button>
+      </div></fieldset>
+      <fieldset class="grp"><legend>Двусветное пространство</legend><div class="opts">
+        <button class="opt" type="button" data-key="light" data-value="Да, в гостиной" aria-pressed="false">Да, в гостиной</button>
+        <button class="opt" type="button" data-key="light" data-value="На усмотрение архитектора" aria-pressed="true">На усмотрение архитектора</button><button class="opt" type="button" data-key="light" data-value="Не нужно" aria-pressed="false">Не нужно</button>
+      </div></fieldset>
+      <fieldset class="grp"><legend>Лифт или подъёмник</legend><div class="opts">
+        <button class="opt" type="button" data-key="lift" data-value="Нужен" aria-pressed="false">Нужен</button><button class="opt" type="button" data-key="lift" data-value="Заложить шахту на будущее" aria-pressed="false">Шахта на будущее</button>
+        <button class="opt" type="button" data-key="lift" data-value="Не нужен" aria-pressed="true">Не нужен</button>
+      </div></fieldset></div>
+<div class="slide" data-idx="5"><h2>Комментарии</h2><p class="slide__hint">Всё, что важно учесть, но не попало в параметры.</p>
+      <label class="field"><span>Пожелания по дому</span>
+        <textarea id="wishes" placeholder="Например: кабинет, 3 спальни, камин, второй свет"></textarea></label></div>
+    <div class="nav-row">
+      <button class="btn btn--ghost" id="prev" type="button" disabled>← Назад</button>
+      <button class="btn" id="next" type="button">Далее →</button>
+    </div>
+  </div>
+
+  <div class="concept" id="concept">
+    <h2>Предварительная концепция</h2>
+    <ul id="resultList"></ul>
+    <div class="concept__actions">
+      <button class="btn" id="pdfBtn" type="button">Сформировать PDF</button>
+      <button class="btn btn--ghost" id="sendBtn" type="button">Отправить заявку</button>
+    </div>
+    <p class="status" id="status" role="status" aria-live="polite"></p>
+    <p class="disclaimer">Конструктор предназначен для предварительного подбора. Изображение показывает направление
+      стиля; геометрия и детали уточняются при проектировании.</p>
+  </div>
+
+  <div class="notes">
+    <article><b>Начните с идеи</b><p>Выберите стиль — остальное можно уточнить по шагам.</p></article>
+    <article><b>Соберите пожелания</b><p>Параметры и комментарии попадают в одно описание.</p></article>
+    <article><b>Обсудите с архитектором</b><p>PDF или заявка помогут начать разговор.</p></article>
+  </div>
+</div></section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="foot__top">
+      <div class="foot__brand">Проектирование частных домов и участков</div>
+      <div class="foot__links">
+        <a href="privacy.html">Политика обработки персональных данных</a><a href="consent.html">Согласие на обработку персональных данных</a><a href="terms.html">Пользовательское соглашение</a><a href="contacts.html">Контакты</a>
+      </div>
+    </div>
+    <div class="foot__bottom"><span>Реквизиты и контактные данные необходимо заполнить перед публикацией.</span></div>
+  </div>
+</footer>
+<script src="assets/site.js" defer></script>
+<script src="assets/theme.js"></script>
+<script src="assets/builder.js" defer></script>
+</body></html>
