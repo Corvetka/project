@@ -1,0 +1,83 @@
+/* ==========================================================
+   Motion-система: «Направления работы» (папка с закладками)
+   Только transform и opacity — без анимации layout.
+   Все движения отключаются при prefers-reduced-motion.
+   ========================================================== */
+
+:root {
+  --m-ease-out: cubic-bezier(.2, .8, .2, 1);
+  --m-ease-spring: cubic-bezier(.34, 1.36, .64, 1);
+  --m-dur-fast: 260ms;
+  --m-dur-base: 480ms;
+  --m-dur-slow: 700ms;
+}
+
+/* 1. Камера: папка «приближается» по мере входа в экран.
+   Значение --cam задаёт JS (0 → 1). Масштаб 0.965 → 1. */
+.folder {
+  transform: translate3d(0, calc((1 - var(--cam, 1)) * 28px), 0) scale(calc(0.965 + var(--cam, 1) * 0.035));
+  transform-origin: 50% 0;
+  will-change: transform;
+}
+
+/* 2. Закладки: при наведении «вытягивается» вверх, как карточка из стопки. */
+.folder__tab {
+  transition:
+    transform var(--m-dur-fast) var(--m-ease-spring),
+    background-color var(--m-dur-base) var(--m-ease-out),
+    box-shadow var(--m-dur-base) var(--m-ease-out),
+    color var(--m-dur-base) var(--m-ease-out);
+}
+.folder__tab:hover,
+.folder__tab:focus-visible {
+  transform: translate3d(0, -6px, 0);
+}
+.folder__tab.is-active {
+  transform: translate3d(0, -4px, 0);
+}
+.folder__tab:focus-visible {
+  outline: 1px solid color-mix(in srgb, var(--neon, #4DF3E0) 70%, transparent);
+  outline-offset: 2px;
+}
+
+/* 3. Сцена смены панели: контент поднимается и появляется поочерёдно (stagger). */
+.folder__panel.is-active > * {
+  animation: m-rise var(--m-dur-base) var(--m-ease-out) both;
+}
+.folder__panel.is-active > *:nth-child(1) { animation-delay: 0ms; }
+.folder__panel.is-active > *:nth-child(2) { animation-delay: 70ms; }
+.folder__panel.is-active > *:nth-child(3) { animation-delay: 140ms; }
+.folder__panel.is-active > *:nth-child(4) { animation-delay: 210ms; }
+
+@keyframes m-rise {
+  from { opacity: 0; transform: translate3d(0, 14px, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+/* 4. Глубина: тело папки «отрывается» от фона тенью, когда открыта вкладка. */
+.folder__body {
+  transition: box-shadow var(--m-dur-slow) var(--m-ease-out);
+}
+.folder__body:hover {
+  box-shadow: 0 34px 70px -38px rgba(0, 0, 0, .95), 0 0 0 1px color-mix(in srgb, var(--neon, #4DF3E0) 18%, transparent);
+}
+
+/* 5. Декор: лёгкий параллакс по скроллу (JS задаёт --py). */
+.decor__item {
+  translate: 0 var(--py, 0px);
+  will-change: translate;
+}
+
+/* ---------- Доступность и производительность ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .folder,
+  .folder__tab,
+  .folder__panel.is-active > *,
+  .decor__item {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+    translate: none !important;
+    will-change: auto;
+  }
+}
